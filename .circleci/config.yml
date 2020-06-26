@@ -1,0 +1,24 @@
+version: 2.1 
+jobs:
+  compile:
+   docker:
+      - image: ubuntu:18.04
+   steps:
+      - run:
+          command: |
+           export DEBIAN_FRONTEND=noninteractive
+           apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev
+           git clone https://github.com/NZXT03/kernel.git
+           git clone -b master https://github.com/ProtoChuz/android_kernel_xiaomi_santoni-4.9.git
+           cd kernel
+           bash uniform.sh
+           bash unified.sh
+           bash artifact.sh
+           
+      - store_artifacts:
+          path: /root/project/android_kernel_xiaomi_santoni-4.9/Anykernel3/UPDATE-AnyKernel3.zip
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+- compile
