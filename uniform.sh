@@ -1,7 +1,6 @@
 #!/bin/bash
 
 apt update -y && sudo apt upgrade -y
-
 apt-get install --no-install-recommends -y \
  autoconf \
  autogen \
