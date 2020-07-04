@@ -1,9 +1,12 @@
 #!/bin/bash
 
 cd /root/project/android_kernel_xiaomi_santoni-4.9
-
+mkdir clang
 git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git -b lineage-17.1 gcc-64 --depth=1
 git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9.git -b lineage-17.1 gcc-32 --depth=1
+wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/b8b61fff8660c2f7262939b7cb9dde7de38df133/clang-r365631c2.tar.gz
+tar xzvf clang-r365631c2.tar.gz -C clang
+
 
 rm -rf out
 
