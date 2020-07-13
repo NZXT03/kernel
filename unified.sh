@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git config --global user.email "syaoma@yandex.com"
+git config --global user.name "NZXT03"
+
 cd /root/project/android_kernel_xiaomi_santoni-4.9
 git fetch https://source.codeaurora.org/quic/la/kernel/msm-4.9/ LA.UM.8.6.2.r2-02400-89xx.0
 git merge FETCH_HEAD
