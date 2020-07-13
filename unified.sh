@@ -1,6 +1,8 @@
 #!/bin/bash
 
 cd /root/project/android_kernel_xiaomi_santoni-4.9
+git fetch https://source.codeaurora.org/quic/la/kernel/msm-4.9/ LA.UM.8.6.r2-02400-89xx.0
+git merge FETCH_HEAD
 mkdir clang
 git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git -b lineage-17.1 gcc-64 --depth=1
 git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9.git -b lineage-17.1 gcc-32 --depth=1
